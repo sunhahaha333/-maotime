@@ -29,4 +29,4 @@ document.querySelectorAll('.scenario').forEach(b=>b.onclick=e=>{e.stopPropagatio
 canvas.addEventListener('click',e=>{const x=e.offsetX;let hit=bandRects.find(([a,b])=>x>=a&&x<=b);if(hit)showDetail(hit[2]);else hideDetail()});
 document.addEventListener('click',e=>{if(!e.target.closest('#detail')&&!e.target.closest('.chip')&&e.target!==canvas)hideDetail()});
 window.addEventListener('resize',resize);update();resize();refreshData();
-if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./service-worker.js').catch(e=>console.warn(e));</script></body></html>
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./version.js?v=1.0.0', { scope: './' }).catch(e=>console.warn(e));</script></body></html>
