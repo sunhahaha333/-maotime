@@ -1,8 +1,8 @@
 (function () {
-  var version = { version: "1.0.0", url: "./index.html", notes: "猫的时光 V1.0.0", releasedAt: "2026-09-22" };
+  var version = { version: "1.0.1", url: "./index.html", notes: "猫的时光 V1.0.1", releasedAt: "2026-09-22" };
   if (typeof window !== "undefined") window.__CAT_TIME_REMOTE_VERSION__ = version;
   if (typeof self !== "undefined" && typeof caches !== "undefined" && typeof self.skipWaiting === "function") {
-    var CACHE = "cat-time-v1.0.0";
+    var CACHE = "cat-time-v1.0.1";
     var ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./icon.png"];
     self.addEventListener("install", function (event) { event.waitUntil(caches.open(CACHE).then(function (cache) { return cache.addAll(ASSETS); }).then(function () { return self.skipWaiting(); })); });
     self.addEventListener("activate", function (event) { event.waitUntil(caches.keys().then(function (keys) { return Promise.all(keys.map(function (k) { return k === CACHE ? null : caches.delete(k); })); }).then(function () { return self.clients.claim(); })); });
